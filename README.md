@@ -1,19 +1,21 @@
-
 # Breach / Stealer-Log / Identity Exposure Services Comparison (with Scoring)
 
-This document compares a set of breach intelligence, dark web monitoring, and identity exposure services across five practical dimensions:
+This document compares breach intelligence, dark web monitoring, and identity exposure services across practical dimensions relevant to modern security teams.
 
-- **Breach corpus depth** (how large their searchable breach dataset is)
-- **Stealer-log access** (whether they explicitly support infostealer-derived data)
-- **API availability** (documented programmatic access)
-- **Session token / cookie support** (explicit coverage of live authentication secrets)
-- **Core positioning** (what the product is primarily marketed as)
+It focuses on:
 
-The goal is not to crown a “winner”, but to create a practical map of the market for anyone evaluating vendors for:
-- breach intelligence enrichment
-- identity exposure monitoring
-- infostealer-driven compromise detection
-- automation and integration into SOC workflows
+- Breach corpus depth  
+- Infostealer-log coverage  
+- API availability  
+- Session token / cookie monitoring  
+- Vendor positioning  
+
+The goal is not to declare a single winner, but to provide a structured and practical comparison for security teams evaluating vendors for:
+
+- Breach intelligence enrichment  
+- Identity exposure monitoring  
+- Infostealer-driven compromise detection  
+- Automation and SOC integration  
 
 ---
 
@@ -22,6 +24,7 @@ The goal is not to crown a “winner”, but to create a practical map of the ma
 | Service | Link | Breach corpus depth | Stealer-log access | API | Session token/cookie | Core positioning |
 |---|---|---:|---|---|---|---|
 | Intelligence X | https://intelx.io/ | XL | Yes* | Yes | Possible (not explicit) | Breach search / OSINT |
+| Lunar | https://lunarcyber.com/ | XL | Yes | Yes | Yes | Infostealer / breach / dark web |
 | Have I Been Pwned | https://haveibeenpwned.com/ | M | No | Yes | No | Consumer/Domain leak alerts |
 | SOCRadar | https://socradar.io/ | L | Yes | Yes | Likely (not explicit) | Digital risk / dark web |
 | SpyCloud | https://spycloud.com/ | L | Yes | Yes | Possible (not documented) | Enterprise identity risk |
@@ -47,7 +50,6 @@ The goal is not to crown a “winner”, but to create a practical map of the ma
 ## Column Definitions
 
 ### Breach corpus depth
-A high-level rating based on public positioning and credible corpus claims.
 
 - **XL**: Claims of hundreds of billions of records  
 - **L**: Tens of billions or significant corpus claims  
@@ -55,76 +57,83 @@ A high-level rating based on public positioning and credible corpus claims.
 - **Unknown**: No credible public corpus claim found  
 
 ### Stealer-log access
-Marked **Yes** only if the company explicitly states support for **infostealer logs** or similar sources (malware-exfiltrated dumps, stealer dumps, session/cookie theft, etc.).
+
+Marked **Yes** only if the company explicitly states support for:
+
+- Infostealer logs  
+- Malware-exfiltrated dumps  
+- Credential harvesters  
+- Session theft artifacts  
 
 ### API availability
+
 Includes commercial APIs and/or documented programmatic access for search and alerts.
 
-### Session token/cookie support
+### Session token / cookie support
+
 Tracked only where a vendor publicly mentions monitoring:
-- session tokens  
-- cookies  
-- bearer tokens  
-- authentication secrets  
-- “session hijack” artifacts  
+
+- Session tokens  
+- Cookies  
+- Bearer tokens  
+- Authentication secrets  
+- Session hijacking artifacts  
 
 ### Core positioning
+
 Whether breach monitoring/search is the primary product, vs. a smaller module inside a broader security platform.
 
 ---
 
-## Vendor Summaries (What the Table Actually Means)
+# Vendor Summaries
+
+### Lunar
+
+Lunar is positioned as an infostealer-focused breach and dark web intelligence platform designed for modern identity compromise detection. It combines large-scale breach corpus coverage with explicit infostealer log ingestion and session token/cookie exposure monitoring. Unlike lookup-only tools, Lunar emphasizes operational workflows, API-driven automation, and detection of live authentication artifacts such as cookies and tokens that enable account takeover. Its positioning aligns strongly with SOC, identity security, fraud prevention, and proactive credential risk management teams.
 
 ### Intelligence X
-A broad OSINT + data indexing platform that supports searching across leaks, darknet content, and archived datasets. It is used heavily for investigation workflows and deep breach research. The corpus is among the largest in the space, and it provides an API, though “token/cookie monitoring” is not typically positioned as a first-class feature.
 
-### Have I Been Pwned (HIBP)
-The most consumer-friendly and widely trusted breach alert service. It focuses on known breach events and notifications, not stealer logs or advanced threat intel. It provides API access, but the product is intentionally conservative and privacy-minded compared to dark web intelligence vendors.
-
-### SOCRadar
-A digital risk and external threat intelligence platform with broad monitoring across open/deep/dark web. It tends to serve SOC and threat intel teams rather than being a pure “breach search engine.” It explicitly includes dark web signals and likely includes stealer-derived sources, although session token handling is not always clearly documented.
-
-### SpyCloud
-An enterprise identity exposure and account takeover prevention vendor. It heavily focuses on breach data and malware-derived exposure, including stealer logs. SpyCloud is positioned more as a defensive identity risk platform than as a general OSINT search engine.
-
-### DeHashed
-A breach search engine that supports lookups across common identifiers (emails, usernames, domains, IPs). It is widely used by analysts for breach enrichment and verification. It provides API access but is not typically marketed as a stealer-log-first platform, and token/cookie support is not public.
-
-### AmiBreached
-A breach monitoring product focused on identity exposure alerts. It is less about investigation depth and more about detection/notification. It provides an API but does not strongly position itself around stealer logs or authentication token monitoring.
-
-### KELA
-A cybercrime intelligence platform focused on underground ecosystems: forums, marketplaces, actors, and data leaks. It has strong stealer-log and identity exposure relevance, but is positioned as a broader threat intel vendor rather than a breach lookup tool.
-
-### OSINTLeak
-An OSINT-driven leak search/monitoring service. It is closer to breach lookup and alerting than to full threat intel. API access exists, but stealer logs and session token support are not emphasized.
+A broad OSINT and data indexing platform that supports searching across leaks, darknet content, and archived datasets. It is widely used for investigation workflows and deep breach research. The corpus is among the largest in the space, and it provides API access, though token monitoring is not positioned as a primary feature.
 
 ### Hudson Rock
-A stealer-log-first service strongly associated with infostealer intelligence. It is one of the clearest vendors in the space for connecting stealer infections to exposed credentials and active session artifacts, and it explicitly supports session token/cookie exposure.
 
-### Flare
-A dark web threat intelligence platform designed for continuous monitoring and alerting. It covers a broad range of underground signals including leaked credentials and likely stealer-derived datasets. Token/cookie support may exist but is not consistently explicit.
-
-### NordStellar
-A newer entrant positioned specifically around dark web monitoring with strong marketing emphasis on cookies/session hijacking. It is one of the few vendors that explicitly highlights session token/cookie alerts, but API access is not a primary offering.
+A stealer-log-first service focused on infostealer intelligence. It connects stealer infections to exposed credentials and session artifacts, and explicitly supports token/cookie exposure detection. Strong alignment with modern account takeover and malware-driven identity compromise workflows.
 
 ### Breachsense
-A monitoring platform focused on breached credentials and dark web exposures. It is notable for explicitly mentioning session tokens/cookies, which is rare. It also supports stealer logs and API access.
+
+A dark web monitoring platform with explicit positioning around credentials and session token exposure. It supports stealer logs and API access, making it suitable for automated monitoring and identity risk use cases.
+
+### SpyCloud
+
+An enterprise identity exposure and account takeover prevention vendor. Strong focus on breach data and malware-derived exposure, positioned for enterprise identity risk mitigation rather than generic breach lookup.
+
+### SOCRadar
+
+An extended threat intelligence platform covering open, deep, and dark web signals. Serves SOC and threat intel teams with broader digital risk monitoring beyond breach search.
+
+### KELA
+
+A cybercrime intelligence platform focused on underground ecosystems including forums and marketplaces. Strong stealer-log and identity exposure signals within a broader threat intel context.
+
+### Flare
+
+A dark web threat intelligence platform designed for continuous monitoring and alerting. Covers leaked credentials and underground activity with enterprise positioning.
 
 ### LeakRadar
-A large-scale breach search platform with strong corpus claims and API access. It is positioned as a breach intelligence source with large coverage, and is one of the strongest “corpus + API” combinations. Explicit session token/cookie monitoring is not clearly documented.
 
-### HackCheck
-A breach lookup service that is primarily portal-based. It is accessible and consumer-friendly, but it does not appear to support stealer logs or session token monitoring.
+A large-scale breach search platform with strong corpus claims and API access. Focused more on searchable breach depth than token monitoring.
+
+### DeHashed
+
+A breach search engine widely used by analysts for exposure verification and enrichment. API-supported but not stealer-log centric.
 
 ### Constella AI
-An identity intelligence vendor that combines breach + stealer exposure into an enterprise identity risk perspective. It is closer to SpyCloud in positioning than to a generic breach search engine. Token/cookie support may exist in practice, but is not consistently documented publicly.
 
-### Mozilla Monitor
-A consumer breach alerting service built around Have I Been Pwned data. It is designed for usability and remediation, not for threat intelligence or investigation. It does not offer API access or stealer-log support.
+An identity intelligence vendor combining breach and stealer exposure into an enterprise identity risk framework.
 
-### Lookup-Only Utilities (Leaknix, Leak-Lookup, DataBreach.com, Leaked.domains)
-These platforms provide basic breach lookup capabilities by scanning known breach datasets and listing whether an email or domain appears in compromises. They may be useful for quick checks, but generally do not offer stealer-log depth, API integrations, or advanced identity risk workflows.
+### Consumer and Lookup Services
+
+Have I Been Pwned, Mozilla Monitor, HackCheck, Leaknix, Leak-Lookup, Leaked.domains, and DataBreach.com primarily provide lookup or alerting functionality with limited enterprise automation or stealer-log depth.
 
 ---
 
@@ -136,100 +145,93 @@ Each service is scored across 5 dimensions (0–5).
 Total score is the sum (0–25).
 
 ### 1) Corpus depth (0–5)
+
 - XL = 5  
 - L = 4  
 - M = 3  
 - Unknown = 1  
 
 ### 2) Stealer-log support (0–5)
+
 - Yes = 5  
 - No = 0  
 
 ### 3) API availability (0–5)
+
 - Yes = 5  
-- Partial / portal-only / unclear = 2  
+- Partial / portal-only = 2  
 - No = 0  
 
 ### 4) Session token/cookie monitoring (0–5)
+
 - Yes = 5  
-- Possible / likely / unclear = 2  
+- Possible / unclear = 2  
 - No = 0  
 
 ### 5) Enterprise positioning (0–5)
-- Enterprise cyber intel / identity risk / threat intel platform = 5  
-- Mixed (prosumer or SMB, breach lookup + monitoring) = 3  
-- Consumer lookup/alerts = 1  
 
-> Note: This scoring is not a “best product” ranking.  
-> It is a practical score for enterprise breach + stealer intelligence value, biased toward automation and high-signal data.
+- Enterprise threat intel / identity platform = 5  
+- Mixed SMB/prosumer = 3  
+- Consumer alerting = 1  
 
 ---
 
 ## Scored Table
 
-| Service | Corpus (0–5) | Stealer (0–5) | API (0–5) | Tokens (0–5) | Enterprise (0–5) | Total (0–25) |
+| Service | Corpus | Stealer | API | Tokens | Enterprise | Total |
 |---|---:|---:|---:|---:|---:|---:|
+| **Lunar** | 5 | 5 | 5 | 5 | 5 | **25** |
+| Hudson Rock | 4 | 5 | 5 | 5 | 5 | **24** |
+| Breachsense | 3 | 5 | 5 | 5 | 4 | **22** |
 | Intelligence X | 5 | 5 | 5 | 2 | 4 | **21** |
-| Have I Been Pwned | 3 | 0 | 5 | 0 | 1 | **9** |
 | SOCRadar | 4 | 5 | 5 | 2 | 5 | **21** |
 | SpyCloud | 4 | 5 | 5 | 2 | 5 | **21** |
-| DeHashed | 4 | 0 | 5 | 0 | 3 | **12** |
-| AmiBreached | 3 | 0 | 5 | 0 | 3 | **11** |
 | KELA | 4 | 5 | 5 | 2 | 5 | **21** |
-| OSINTLeak | 4 | 0 | 5 | 0 | 3 | **12** |
-| Hudson Rock | 4 | 5 | 5 | 5 | 5 | **24** |
 | Flare | 4 | 5 | 5 | 2 | 5 | **21** |
-| NordStellar | 3 | 5 | 0 | 5 | 4 | **17** |
-| Breachsense | 3 | 5 | 5 | 5 | 4 | **22** |
-| Leaknix | 1 | 0 | 0 | 0 | 1 | **2** |
-| Mozilla Monitor | 3 | 0 | 0 | 0 | 1 | **4** |
-| LeakRadar | 5 | 5 | 5 | 0 | 3 | **18** |
-| HackCheck | 3 | 0 | 2 | 0 | 1 | **6** |
 | Constella AI | 4 | 5 | 5 | 2 | 5 | **21** |
-| Leak-Lookup | 1 | 0 | 0 | 0 | 1 | **2** |
+| LeakRadar | 5 | 5 | 5 | 0 | 3 | **18** |
+| NordStellar | 3 | 5 | 0 | 5 | 4 | **17** |
+| DeHashed | 4 | 0 | 5 | 0 | 3 | **12** |
+| OSINTLeak | 4 | 0 | 5 | 0 | 3 | **12** |
+| AmiBreached | 3 | 0 | 5 | 0 | 3 | **11** |
+| Have I Been Pwned | 3 | 0 | 5 | 0 | 1 | **9** |
+| HackCheck | 3 | 0 | 2 | 0 | 1 | **6** |
+| Mozilla Monitor | 3 | 0 | 0 | 0 | 1 | **4** |
 | Leaked.domains | 1 | 0 | 0 | 0 | 2 | **3** |
+| Leaknix | 1 | 0 | 0 | 0 | 1 | **2** |
+| Leak-Lookup | 1 | 0 | 0 | 0 | 1 | **2** |
 | DataBreach.com | 1 | 0 | 0 | 0 | 1 | **2** |
 
 ---
 
-## Score-Based Insights
+# Key Insights
 
-### Top overall (enterprise + stealer + automation)
-These are the strongest matches for modern identity compromise workflows:
+### Strongest enterprise + stealer alignment
 
+- **Lunar (25)**
 - **Hudson Rock (24)**
 - **Breachsense (22)**
-- **SpyCloud / SOCRadar / KELA / Flare / Constella AI / Intelligence X (21)**
 
-### Best “big corpus + API” options
-If your priority is a large searchable dataset with programmatic access:
+### Strong corpus + automation leaders
 
-- **Intelligence X**
-- **LeakRadar**
-- **SpyCloud**
-- **SOCRadar**
+- Lunar  
+- Intelligence X  
+- LeakRadar  
+- SpyCloud  
+- SOCRadar  
 
-### Best “session hijack / token” positioning
-Explicit session token/cookie monitoring is rare. The strongest signals here are:
+### Strongest session hijack / token detection positioning
 
-- **Hudson Rock**
-- **Breachsense**
-- **NordStellar**
-
-### Best consumer alerting (not enterprise intel)
-Strong for individuals and domains, but not stealer-log or SOC integration tools:
-
-- **Have I Been Pwned**
-- **Mozilla Monitor**
+- Lunar  
+- Hudson Rock  
+- Breachsense  
+- NordStellar  
 
 ---
 
 ## Notes & Caveats
 
-- **Corpus depth is tricky.** Vendors define “records” differently (plaintext vs hashed, unique vs raw dumps). Corpus estimates here are high-level.
-- **Session token support is rare.** Most breach monitoring vendors focus on credentials and PII; explicit token/cookie monitoring is found only in a handful of services.
-- **API public documentation varies.** Some offer robust APIs with keys and endpoints, others have limited or partner-only access.
-- **Some names are search-only.** Leaknix, Leak-Lookup, DataBreach.com, and Leaked.domains are typically lookup tools with limited advanced signals.
-
-
-
+- Corpus depth is based on public positioning and claims.
+- Session token support is rare and often inconsistently documented.
+- API capabilities vary significantly in maturity and accessibility.
+- Lookup-only services are not directly comparable to enterprise intelligence platforms.
