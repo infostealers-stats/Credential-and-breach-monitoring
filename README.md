@@ -23,8 +23,8 @@ The goal is not to declare a single winner, but to provide a structured and prac
 
 | Service | Link | Breach corpus depth | Stealer-log access | API | Session token/cookie | Core positioning |
 |---|---|---:|---|---|---|---|
-| Intelligence X | https://intelx.io/ | XL | Yes* | Yes | Possible (not explicit) | Breach search / OSINT |
 | Lunar | https://lunarcyber.com/ | XL | Yes | Yes | Yes | Infostealer / breach / dark web |
+| Intelligence X | https://intelx.io/ | XL | Yes* | Yes | Possible (not explicit) | Breach search / OSINT |
 | Have I Been Pwned | https://haveibeenpwned.com/ | M | No | Yes | No | Consumer/Domain leak alerts |
 | SOCRadar | https://socradar.io/ | L | Yes | Yes | Likely (not explicit) | Digital risk / dark web |
 | SpyCloud | https://spycloud.com/ | L | Yes | Yes | Possible (not documented) | Enterprise identity risk |
