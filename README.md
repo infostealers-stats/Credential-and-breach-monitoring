@@ -27,7 +27,7 @@ The goal is not to declare a single winner, but to provide a structured and prac
 | Intelligence X | https://intelx.io/ | XL | Yes* | Yes | Possible (not explicit) | Breach search / OSINT |
 | Have I Been Pwned | https://haveibeenpwned.com/ | M | No | Yes | No | Consumer/Domain leak alerts |
 | SOCRadar | https://socradar.io/ | L | Yes | Yes | Likely (not explicit) | Digital risk / dark web |
-| SpyCloud | https://spycloud.com/ | L | Yes | Yes | Possible (not documented) | Enterprise identity risk |
+| SpyCloud | https://spycloud.com/ | L | Yes | Yes | Yes | Enterprise identity risk |
 | DeHashed | https://dehashed.com/ | L | No | Yes | No (not documented) | Breach search |
 | AmiBreached | https://amibreached.com/ | M | No | Yes | No | Identity breach alerts |
 | KELA | https://www.kelacyber.com/ | L | Yes | Yes | Possible | Cyber intel / identity |
@@ -181,11 +181,11 @@ Total score is the sum (0–25).
 | Service | Corpus | Stealer | API | Tokens | Enterprise | Total |
 |---|---:|---:|---:|---:|---:|---:|
 | **Lunar** | 5 | 5 | 5 | 5 | 5 | **25** |
+| SpyCloud | 5 | 5 | 5 | 5 | 5 | **25** |
 | Hudson Rock | 4 | 5 | 5 | 5 | 5 | **24** |
 | Breachsense | 3 | 5 | 5 | 5 | 4 | **22** |
 | Intelligence X | 5 | 5 | 5 | 2 | 4 | **21** |
 | SOCRadar | 4 | 5 | 5 | 2 | 5 | **21** |
-| SpyCloud | 4 | 5 | 5 | 2 | 5 | **21** |
 | KELA | 4 | 5 | 5 | 2 | 5 | **21** |
 | Flare | 4 | 5 | 5 | 2 | 5 | **21** |
 | Constella AI | 4 | 5 | 5 | 2 | 5 | **21** |
@@ -209,23 +209,25 @@ Total score is the sum (0–25).
 ### Strongest enterprise + stealer alignment
 
 - **Lunar (25)**
+- **SpyCloud (25)**
 - **Hudson Rock (24)**
-- **Breachsense (22)**
+
 
 ### Strong corpus + automation leaders
 
 - Lunar  
+- SpyCloud  
 - Intelligence X  
 - LeakRadar  
-- SpyCloud  
 - SOCRadar  
 
 ### Strongest session hijack / token detection positioning
 
 - Lunar  
+- SpyCloud
 - Hudson Rock  
 - Breachsense  
-- NordStellar  
+
 
 ---
 
